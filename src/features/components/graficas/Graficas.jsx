@@ -22,7 +22,7 @@ const datos = {
     },
   ],
 }; 
-
+ 
 
 const opciones = {
   maintainAspectRatio: false, //la altura de su contenedo¿r
