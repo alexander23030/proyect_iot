@@ -21,7 +21,8 @@ const datos = {
       pointRadius: 3,
     },
   ],
-};  //
+}; 
+
 
 const opciones = {
   maintainAspectRatio: false, //la altura de su contenedo¿r
