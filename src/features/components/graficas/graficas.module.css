@@ -1,0 +1,17 @@
+.tarjeta {
+  padding: 1.5rem;
+  background: #1f2028;
+  border: 1px solid #2e303a;
+  border-radius: 12px;
+}
+
+.titulo {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--text-h);
+}
+
+.grafica {
+  position: relative;
+  height: 300px;
+}

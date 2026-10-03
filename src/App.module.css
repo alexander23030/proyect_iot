@@ -1,0 +1,12 @@
+/* contiene el layout, es decir, la estructura general
+ elementos de App, en este caso el <main>
+ solo define cómo se acomoda el contenido de todas las páginas*/
+
+.contenido {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
