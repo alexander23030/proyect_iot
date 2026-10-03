@@ -1,0 +1,75 @@
+.indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #1f2028;
+  border: 1px solid #2e303a;
+  border-left: 4px solid var(--color-nivel);
+  border-radius: 12px;
+}
+
+.excelente {
+  --color-nivel: #22c55e;
+}
+
+.buena {
+  --color-nivel: #f59e0b;
+}
+
+.mala {
+  --color-nivel: #ef4444;
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icono {
+  font-size: 2.25rem;
+  color: var(--color-nivel);
+}
+
+.etiquetaSuperior {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.nivel {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-nivel);
+}
+
+.descripcion {
+  margin: 0;
+  color: var(--text);
+}
+
+.escala {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.segmento {
+  padding: 0.4rem;
+  border-radius: 999px;
+  background: var(--color-nivel);
+  color: #0f172a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+}
+
+.segmentoActivo {
+  opacity: 1;
+}

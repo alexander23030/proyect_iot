@@ -1,0 +1,41 @@
+.tarjeta {
+  padding: 1.25rem 1.5rem;
+  background: #1f2028;
+  border: 1px solid #2e303a;
+  border-radius: 12px;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.icono {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.titulo {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.valor {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.unidad {
+  margin-left: 0.35rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
