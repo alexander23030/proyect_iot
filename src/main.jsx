@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router'
 import { router } from './router.jsx'
 import './config/chartConfig';
 import './index.css'
+import 'primeicons/primeicons.css';
 
 //en lugar de renderizar App  se renderiza el RouterProvider
 //se decide qué mostrar según la URL.
