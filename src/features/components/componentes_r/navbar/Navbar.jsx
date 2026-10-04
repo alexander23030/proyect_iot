@@ -11,7 +11,7 @@ export function Navbar() {
       <div className={styles.interior}>
         <NavLink to="/" className={styles.marca}>
           <span className={styles.logo} />
-          Mi App
+          Medidor calidad de aire
         </NavLink>
         <NavLink to="/" end className={obtenerClaseEnlace}>
           Inicio
