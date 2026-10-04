@@ -11,7 +11,7 @@ function  App(){
     <>
       <Navbar />
       <main className={styles.contenido}>
-        <Outlet />
+        <Outlet /> 
       </main>
     </>
   );
