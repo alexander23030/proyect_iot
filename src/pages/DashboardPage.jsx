@@ -46,7 +46,7 @@ export function DashboardPage() {
         campo="temperatura" />
 
         <Graficas titulo="Humedad" 
-        etiqueta="% Porcentaje"  
+        etiqueta="% Porcentaje"   
         historial={historial} 
         campo="humedad" />  
       </div>
