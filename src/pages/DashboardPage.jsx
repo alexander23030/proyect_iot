@@ -18,10 +18,35 @@ export function DashboardPage() {
 
       <Calidadaire co2={lecturaActual.co2} />
 
+<<<<<<< Updated upstream
       <div className={styles.lecturas}>
         <Lecturadatos titulo="CO₂" valor={lecturaActual.co2} unidad="ppm" icono="pi pi-cloud" />
         <Lecturadatos titulo="Temperatura" valor={lecturaActual.temperatura} unidad="°C" icono="pi pi-sun" />
         <Lecturadatos titulo="Humedad" valor={lecturaActual.humedad} unidad="%" icono="pi pi-percentage" />
+=======
+        <div className={styles.lecturas}>
+          <Lecturadatos titulo="CO₂" valor={lecturaActual.co2} unidad="ppm" icono="pi pi-cloud" />
+          <Lecturadatos titulo="Temperatura" valor={lecturaActual.temperatura} unidad="°C" icono="pi pi-sun" />
+          <Lecturadatos titulo="Humedad" valor={lecturaActual.humedad} unidad="%" icono="pi pi-percentage" />
+        </div>
+
+        {/*Para crear mas graficas solo se reutiliza el componente */}
+        <Graficas
+        titulo="Lecturas de CO₂"
+        etiqueta="CO₂ (ppm)"
+        historial={historial}
+        campo="co2" 
+        />
+        <Graficas titulo="Temperatura" 
+        etiqueta="°C" 
+        historial={historial} 
+        campo="temperatura" />
+
+        <Graficas titulo="Humedad" 
+        etiqueta="% Porcentaje"    
+        historial={historial} 
+        campo="humedad" />  
+>>>>>>> Stashed changes
       </div>
 
       <Graficas />
