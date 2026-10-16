@@ -1,0 +1,8 @@
+erDiagram
+    MEDICION {
+        int id_medicion PK "SERIAL"
+        int co2_ppm "NOT NULL"
+        numeric temperatura_c "NUMERIC(4,1) NOT NULL"
+        numeric humedad_relativa "NUMERIC(4,1) NOT NULL"
+        timestamp fecha_hora "NOT NULL, DEFAULT now, indexado"
+    }
