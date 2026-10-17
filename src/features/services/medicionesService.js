@@ -20,9 +20,9 @@ function adaptarMedicion(dto) {
   };
 }
 
-export async function obtenerMediciones() {
+export async function obtenerMediciones(horas) {
     ////se recibe el get del back 
-  const respuesta = await fetch(`${API}/`);
+  const respuesta = await fetch(`${API}?horas=${horas}`);
 
   if (!respuesta.ok) {
     throw new Error(`Error ${respuesta.status} al pedir las mediciones`);
