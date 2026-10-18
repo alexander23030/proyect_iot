@@ -31,3 +31,16 @@ export async function obtenerMediciones(horas) {
   const datos = await respuesta.json();
   return datos.map(adaptarMedicion);
 }
+
+export async function obtenerUltLectura() {
+  const respuesta = await fetch(`${API}/actual`);
+
+  // tabla vacía: no es un error, simplemente no hay lectura todavía
+  if (respuesta.status === 404) return null;
+
+  if (!respuesta.ok) {
+    throw new Error(`Error del servidor: ${respuesta.status}`);
+  }
+
+  return respuesta.json();
+}

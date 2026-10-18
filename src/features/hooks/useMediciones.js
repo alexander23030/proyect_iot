@@ -4,6 +4,8 @@ import { obtenerMediciones } from '../services/medicionesService';
 const INTERVALO_MS = 5000; // cada cuántos ms se consulta el backend
 
 export function useMediciones(horas) {
+
+  //Variables de estados
   const [historial, setHistorial] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
@@ -39,7 +41,6 @@ export function useMediciones(horas) {
     };
   }, [horas]);
 
-  const lecturaActual = historial.at(-1) ?? null;
 
-  return { historial, lecturaActual, cargando, error };
+  return { historial, cargando, error };
 }
