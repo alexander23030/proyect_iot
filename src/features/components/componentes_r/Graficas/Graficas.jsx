@@ -15,7 +15,14 @@ const opciones = {
     legend: { labels: { color: COLORES.texto } },
   },
   scales: {
-    x: { ticks: { color: COLORES.texto }, grid: { color: COLORES.rejilla } },
+    x: {  ticks: {
+    color: COLORES.texto,
+    autoSkip: true,
+    maxTicksLimit: 12,
+    maxRotation: 0,
+  },
+  grid: { color: COLORES.rejilla },
+},
     y: { ticks: { color: COLORES.texto }, grid: { color: COLORES.rejilla } },
   },
 };

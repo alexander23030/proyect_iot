@@ -34,13 +34,19 @@ export function DashboardPage() {
       {/* si el backend falla después de cargar, avisa pero deja los últimos datos */}
       {errorActual && <p>{errorActual}</p>}
 
-      <Calidadaire co2={lecturaActual.co2} />
+        {lecturaActual ? (
+          <>
+            <Calidadaire co2={lecturaActual.co2} />
 
-      <div className={styles.lecturas}>
-        <Lecturadatos titulo="CO₂" valor={lecturaActual.co2} unidad="ppm" icono="pi pi-cloud" />
-        <Lecturadatos titulo="Temperatura" valor={lecturaActual.temperatura} unidad="°C" icono="pi pi-sun" />
-        <Lecturadatos titulo="Humedad" valor={lecturaActual.humedad} unidad="%" icono="pi pi-percentage" />
-      </div>
+            <div className={styles.lecturas}>
+              <Lecturadatos titulo="CO₂" valor={lecturaActual.co2 ?? '--'} unidad="ppm" icono="pi pi-cloud" />
+              <Lecturadatos titulo="Temperatura" valor={lecturaActual.temperatura ?? '--'} unidad="°C" icono="pi pi-sun" />
+              <Lecturadatos titulo="Humedad" valor={lecturaActual.humedad ?? '--'} unidad="%" icono="pi pi-percentage" />
+            </div>
+          </>
+        ) : (
+          <p>No hay una lectura disponible todavía. Esperando mediciones...</p>
+        )}
 
       <div className={styles.filtros}>
         {RANGOS.map((rango) => (
