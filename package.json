@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "chart.js": "^4.5.1",
+    "chartjs-adapter-date-fns": "^3.0.0",
+    "date-fns": "^4.4.0",
     "mqtt": "^5.16.0",
     "primeicons": "^8.0.2",
     "primereact": "^11.2.0",

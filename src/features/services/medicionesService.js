@@ -10,16 +10,17 @@ function formatearHora(fechahora) {
     hour12: true,
   });
 }
-// Pasa el objeto del backend al formato que ya usan tus componentes
-function adaptarMedicion(dto) {
-  return {
-    hora: formatearHora(dto.fechahora),
-    co2: dto.co2,
-    temperatura: dto.temperatura,
-    humedad: dto.humedad,
-  };
-}
-
+// Pasa el objeto del backend al formato que ya usan los componentes
+  //Eje x corregido
+  function adaptarMedicion(dto) {
+    return {
+      hora: formatearHora(dto.fechahora),
+      fecha: dto.fechahora, // fecha completa, la usa el eje de tiempo
+      co2: dto.co2,
+      temperatura: dto.temperatura,
+      humedad: dto.humedad,
+    };
+  }
 export async function obtenerMediciones(horas) {
     ////se recibe el get del back 
   const respuesta = await fetch(`${API}?horas=${horas}`);
@@ -44,3 +45,4 @@ export async function obtenerUltLectura() {
 
   return respuesta.json();
 }
+
