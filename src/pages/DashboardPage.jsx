@@ -69,9 +69,9 @@ export function DashboardPage() {
         <p>No hay mediciones en este rango.</p>
       ) : (
         <>
-          <Graficas titulo="Lecturas de CO₂" etiqueta="CO₂ (ppm)" historial={historial} campo="co2" />
-          <Graficas titulo="Temperatura" etiqueta="°C" historial={historial} campo="temperatura" />
-          <Graficas titulo="Humedad" etiqueta="% Porcentaje" historial={historial} campo="humedad" />
+        <Graficas titulo="Lecturas de CO₂" etiqueta="CO₂ (ppm)" historial={historial} campo="co2" horas={horas} />
+        <Graficas titulo="Temperatura" etiqueta="°C" historial={historial} campo="temperatura" horas={horas} />
+        <Graficas titulo="Humedad" etiqueta="% Porcentaje" historial={historial} campo="humedad" horas={horas} />
         </>
       )}
     </div>
