@@ -10,6 +10,7 @@ function formatearHora(fechahora) {
     hour12: true,
   });
 }
+
 // Pasa el objeto del backend al formato que ya usan los componentes
   //Eje x corregido
   function adaptarMedicion(dto) {
@@ -21,6 +22,9 @@ function formatearHora(fechahora) {
       humedad: dto.humedad,
     };
   }
+
+  //ger de todos los datos dentro de una escala
+  // de horas determinada (6,12,24,96) con la funcion adaptar mediciones
 export async function obtenerMediciones(horas) {
     ////se recibe el get del back 
   const respuesta = await fetch(`${API}?horas=${horas}`);
@@ -33,16 +37,32 @@ export async function obtenerMediciones(horas) {
   return datos.map(adaptarMedicion);
 }
 
+
+//get al ultimo dato para los indicadores
 export async function obtenerUltLectura() {
   const respuesta = await fetch(`${API}/actual`);
-
-  // tabla vacía: no es un error, simplemente no hay lectura todavía
+  //validacion errores (tabla vacia)
   if (respuesta.status === 404) return null;
 
   if (!respuesta.ok) {
     throw new Error(`Error del servidor: ${respuesta.status}`);
   }
-
   return respuesta.json();
 }
+
+//get a determinados rangos de fechas
+export async function getReporte(desde, hasta ){
+  //URLSearchParams facilita la
+  // modificacion de query parameters que se mandan en una URL
+  const parametros =  new URLSearchParams({ desde, hasta });
+  const respuesta = await fetch(`/reportes?${parametros}`);
+  //validacion errores (tabla vacia)
+    if (respuesta.status === 404) return null;
+
+  if (!respuesta.ok) {
+    throw new Error(`Error del servidor: ${respuesta.status}`);
+  }
+  return respuesta.json();
+}
+
 
