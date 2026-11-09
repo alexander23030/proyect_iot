@@ -42,27 +42,37 @@ export async function obtenerMediciones(horas) {
 export async function obtenerUltLectura() {
   const respuesta = await fetch(`${API}/actual`);
   //validacion errores (tabla vacia)
-  if (respuesta.status === 404) return null;
-
-  if (!respuesta.ok) {
-    throw new Error(`Error del servidor: ${respuesta.status}`);
-  }
+    if (respuesta.status === 404) return null;
+    if (!respuesta.ok) {
+      throw new Error(`Error del servidor: ${respuesta.status}`);
+    }
   return respuesta.json();
 }
 
 //get a determinados rangos de fechas
 export async function getReporte(desde, hasta ){
-  //URLSearchParams facilita la
-  // modificacion de query parameters que se mandan en una URL
+  //URLSearchParams facilita la modificacion de query parameters que se mandan en una URL
   const parametros =  new URLSearchParams({ desde, hasta });
-  const respuesta = await fetch(`/reportes?${parametros}`);
+  const respuesta = await fetch(`${API}/reportes?${parametros}`);
   //validacion errores (tabla vacia)
     if (respuesta.status === 404) return null;
-
-  if (!respuesta.ok) {
-    throw new Error(`Error del servidor: ${respuesta.status}`);
-  }
+    if (!respuesta.ok) {
+      throw new Error(`Error del servidor: ${respuesta.status}`);
+    }
   return respuesta.json();
+}
+
+  // estadísticas del periodo: promedio, máximo y mínimo de cada variable
+  // desde y hasta en formato local: '2026-10-21T00:00:00'
+export async function obtenerResumen(desde, hasta) {
+    const parametros = new URLSearchParams({ desde, hasta });
+    const respuesta = await fetch(`${API}/resumen?${parametros}`);
+
+    if (!respuesta.ok) {
+      throw new Error(`Error ${respuesta.status} al pedir el resumen`);
+    }
+
+    return respuesta.json();
 }
 
 

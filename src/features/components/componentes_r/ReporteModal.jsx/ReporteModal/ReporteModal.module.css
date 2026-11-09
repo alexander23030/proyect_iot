@@ -12,7 +12,21 @@
   z-index: 1000;
   animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+.btnExportar {
+  background-color: #059669; /* Un tono verde elegante para Excel */
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: auto; /* Empuja el botón hacia la izquierda del footer */
+}
 
+.btnExportar:hover {
+  background-color: #047857;
+}
 /* Clase que se activa al cerrar el fondo */
 .modalOverlay.closing {
   animation: fadeOut 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
