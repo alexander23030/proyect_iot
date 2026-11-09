@@ -1,0 +1,17 @@
+erDiagram
+    SENSOR ||--o{ MEDICION : "registra"
+
+    SENSOR {
+        int id_sensor PK "SERIAL"
+        varchar nombre "VARCHAR(50) NOT NULL"
+        varchar estado "VARCHAR(20) DEFAULT activo"
+    }
+
+    MEDICION {
+        int id_medicion PK "SERIAL"
+        int id_sensor FK "NOT NULL"
+        int co2_ppm "NOT NULL"
+        numeric temperatura_c "NUMERIC(4,1) NOT NULL"
+        numeric humedad_relativa "NUMERIC(4,1) NOT NULL"
+        timestamp fecha_hora "NOT NULL, DEFAULT now, indexado"
+    }

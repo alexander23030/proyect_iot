@@ -13,3 +13,24 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
+
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filtro,
+.filtroActivo {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #c084fc;
+  background: transparent;
+  color: #c084fc;
+  cursor: pointer;
+}
+
+.filtroActivo {
+  background: #c084fc;
+  color: #1f2937;
+}
