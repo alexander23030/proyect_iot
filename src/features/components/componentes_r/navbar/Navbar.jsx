@@ -1,8 +1,7 @@
 import { NavLink } from 'react-router';
 import { useState } from 'react';
 import styles from './navbar.module.css';
-import { ReporteModal } from '../ReporteModal.jsx/ReporteModal';
-
+import { ReporteModal } from '../ReporteModal.jsx/ReporteModal/ReporteModal';
 function obtenerClaseEnlace({ isActive }) {
   return isActive ? `${styles.enlace} ${styles.activo}` : styles.enlace;
 }
