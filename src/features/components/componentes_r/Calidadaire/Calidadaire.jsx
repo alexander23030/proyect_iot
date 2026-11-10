@@ -3,16 +3,16 @@ import styles from './Calidadaire.module.css';
 const NIVELES = [
   {
     clave: 'excelente',
-    max: 800,
-    etiqueta: 'Excelente',
+    max: 700,
+    etiqueta: 'Buena',
     descripcion: 'Aire limpio.',
     icono: 'pi pi-check-circle',
   },
   {
     clave: 'buena',
-    max: 1200,
-    etiqueta: 'Buena',
-    descripcion: 'Calidad aceptable. Conviene ventilar.',
+    max: 1000,
+    etiqueta: 'Insuficiente',
+    descripcion: 'Ventilación insuficiente. Conviene ventilar.',
     icono: 'pi pi-info-circle',
   },
   {
