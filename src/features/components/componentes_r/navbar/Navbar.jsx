@@ -2,6 +2,7 @@ import { NavLink } from 'react-router';
 import { useState } from 'react';
 import styles from './navbar.module.css';
 import { ReporteModal } from '../ReporteModal.jsx/ReporteModal/ReporteModal';
+import logo from '../../../../assets/logo.png';
 function obtenerClaseEnlace({ isActive }) {
   return isActive ? `${styles.enlace} ${styles.activo}` : styles.enlace;
 }
@@ -15,7 +16,7 @@ export function Navbar() {
       <nav className={styles.menu}>
         <div className={styles.interior}>
           <NavLink to="/" className={styles.marca}>
-            <span className={styles.logo} />
+          <img src={logo} alt="Logo" className={styles.logo} />
             Medidor calidad de aire
           </NavLink>
           <NavLink to="/" end className={obtenerClaseEnlace}>
