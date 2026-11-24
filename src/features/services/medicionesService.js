@@ -1,14 +1,17 @@
 //Aqui se maneja todo lo relacionado a como se reciben los datos
-const API = 'http://localhost:8080';
+const API = 'https://api-monitoreo-noe-2026-crh3excffzeeayfp.chilecentral-01.azurewebsites.net';
 
-// Convierte "2026-10-15T18:50:00.000+00:00" en hora y minuto,
-// no se solicita segundos para el eje X
+// Convierte "2026-10-15T18:50:00.000+00:00" en hora y minuto,C
 function formatearHora(fechahora) {
  return new Date(fechahora).toLocaleTimeString('es-MX', {
     hour: '2-digit',
     minute: '2-digit',
     hour12: true,
   });
+}
+
+function fechaLocalAUtc(fechaLocal) {
+  return new Date(fechaLocal).toISOString().slice(0, 19);
 }
 
 // Pasa el objeto del backend al formato que ya usan los componentes
@@ -52,7 +55,10 @@ export async function obtenerUltLectura() {
 //get a determinados rangos de fechas
 export async function getReporte(desde, hasta ){
   //URLSearchParams facilita la modificacion de query parameters que se mandan en una URL
-  const parametros =  new URLSearchParams({ desde, hasta });
+  const parametros = new URLSearchParams({
+  desde: fechaLocalAUtc(desde),
+  hasta: fechaLocalAUtc(hasta),
+});
   const respuesta = await fetch(`${API}/reportes?${parametros}`);
   //validacion errores (tabla vacia)
     if (respuesta.status === 404) return null;
@@ -65,7 +71,10 @@ export async function getReporte(desde, hasta ){
   // estadísticas del periodo: promedio, máximo y mínimo de cada variable
   // desde y hasta en formato local: '2026-10-21T00:00:00'
 export async function obtenerResumen(desde, hasta) {
-    const parametros = new URLSearchParams({ desde, hasta });
+    const parametros = new URLSearchParams({
+  desde: fechaLocalAUtc(desde),
+  hasta: fechaLocalAUtc(hasta),
+});
     const respuesta = await fetch(`${API}/resumen?${parametros}`);
 
     if (!respuesta.ok) {
